@@ -21,6 +21,14 @@ class TwitterService(object):
             os.environ.get('CALLBACK_URL', 'http://localhost:5000/callback'),
         )
 
+    def get_admin(self):
+        auth = self.create_auth()
+        auth.set_access_token(
+            os.environ['ACCESS_TOKEN'],
+            os.environ['ACCESS_TOKEN_SECRET'],
+        )
+        return UserService(auth)
+
     def create_user(self, oauth_token, oauth_verifier):
         auth = self.create_auth()
         auth.request_token = {
@@ -39,7 +47,7 @@ class TwitterService(object):
             oauth_token=oauth_token,
         )
         auth = self.create_auth()
-        auth.set_access_token = (
+        auth.set_access_token(
             user_data['access_token'],
             user_data['access_token_secret'],
         )
