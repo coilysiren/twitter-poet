@@ -8,6 +8,8 @@ pymongo
 pytest
 pytest-watch
 requests
+vcrpy
+pytest-vcr
 
 # operations
 gunicorn

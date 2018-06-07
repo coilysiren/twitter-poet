@@ -42,7 +42,7 @@ def results():
     if session.get('request_token'):
         user = Twitter().get_user(session['request_token']['oauth_token'])
         if user:
-            return render_template('result.html', content=user.me())
+            return render_template('result.html', content=user.generate())
         else:
             redirect_url, session['request_token'] = Twitter(
             ).redirect_and_token

@@ -1,3 +1,4 @@
+import functools
 import tweepy
 import os
 from dotenv import load_dotenv, find_dotenv
@@ -97,9 +98,5 @@ class UserService(object):
         except tweepy.error.TweepError:
             raise OutdatedCrendentialsException
 
-    def me(self):
-        return self.api.me()
-
-
-def test_placeholder():
-    assert True
+    def generate(self):
+        return self.api.user_timeline()

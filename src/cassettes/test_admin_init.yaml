@@ -1,0 +1,47 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Host: [api.twitter.com]
+      authorization: [CONTENT_FILTERED]
+    method: GET
+    uri: https://api.twitter.com/1.1/account/verify_credentials.json
+  response:
+    body: {string: '{"id":2212879538,"id_str":"2212879538","name":"Lynn Cyrin \ud83d\udcbb","screen_name":"lynncyrin","location":"Seattle,
+        WA","description":"https:\/\/t.co\/Ja0FTvsr1o \\\\ software engineer \\\\
+        programming zealot  \\\\ web application architect \\\\ as seen in @callisto,
+        @bundlerio, @NASA","url":"https:\/\/t.co\/gNfTWjn3B0","entities":{"url":{"urls":[{"url":"https:\/\/t.co\/gNfTWjn3B0","expanded_url":"http:\/\/lynncyrin.me","display_url":"lynncyrin.me","indices":[0,23]}]},"description":{"urls":[{"url":"https:\/\/t.co\/Ja0FTvsr1o","expanded_url":"http:\/\/my.pronoun.is\/she","display_url":"my.pronoun.is\/she","indices":[0,23]}]}},"protected":false,"followers_count":5006,"friends_count":764,"listed_count":229,"created_at":"Sun
+        Nov 24 18:16:52 +0000 2013","favourites_count":179124,"utc_offset":null,"time_zone":null,"geo_enabled":false,"verified":false,"statuses_count":77072,"lang":"en","status":{"created_at":"Thu
+        Jun 07 06:54:28 +0000 2018","id":1004617571948097538,"id_str":"1004617571948097538","text":"@indirect
+        oh yea totally, like `checkpoints-$\u007bHEAD\u007d`","truncated":false,"entities":{"hashtags":[],"symbols":[],"user_mentions":[{"screen_name":"indirect","name":"literally
+        misandr\u00e9","id":5674672,"id_str":"5674672","indices":[0,9]}],"urls":[]},"source":"\u003ca
+        href=\"http:\/\/twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c\/a\u003e","in_reply_to_status_id":1004610571612848128,"in_reply_to_status_id_str":"1004610571612848128","in_reply_to_user_id":5674672,"in_reply_to_user_id_str":"5674672","in_reply_to_screen_name":"indirect","geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":0,"favorite_count":0,"favorited":false,"retweeted":false,"lang":"en"},"contributors_enabled":false,"is_translator":false,"is_translation_enabled":true,"profile_background_color":"DBE9ED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme17\/bg.gif","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme17\/bg.gif","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/997383622582677504\/sluwv7ck_normal.jpg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/997383622582677504\/sluwv7ck_normal.jpg","profile_banner_url":"https:\/\/pbs.twimg.com\/profile_banners\/2212879538\/1526628073","profile_link_color":"CC33B5","profile_sidebar_border_color":"FFFFFF","profile_sidebar_fill_color":"E6F6F9","profile_text_color":"333333","profile_use_background_image":true,"has_extended_profile":true,"default_profile":false,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false,"translator_type":"none","suspended":false,"needs_phone_verification":false}'}
+    headers:
+      cache-control: ['no-cache, no-store, must-revalidate, pre-check=0, post-check=0']
+      content-disposition: [attachment; filename=json.json]
+      content-length: ['2781']
+      content-type: [application/json;charset=utf-8]
+      date: ['Thu, 07 Jun 2018 08:51:21 GMT']
+      expires: ['Tue, 31 Mar 1981 05:00:00 GMT']
+      last-modified: ['Thu, 07 Jun 2018 08:51:21 GMT']
+      pragma: [no-cache]
+      server: [tsa_a]
+      set-cookie: ['personalization_id="v1_74hKld8iC4ZtT0hi99mIXQ=="; Expires=Sat,
+          06 Jun 2020 08:51:21 GMT; Path=/; Domain=.twitter.com', lang=en; Path=/,
+        'guest_id=v1%3A152836148135993792; Expires=Sat, 06 Jun 2020 08:51:21 GMT;
+          Path=/; Domain=.twitter.com']
+      status: [200 OK]
+      strict-transport-security: [max-age=631138519]
+      x-access-level: [read-write]
+      x-connection-hash: [5ec5a73b3b26b622dd8dba326de45736]
+      x-content-type-options: [nosniff]
+      x-frame-options: [SAMEORIGIN]
+      x-rate-limit-limit: ['75']
+      x-rate-limit-remaining: ['70']
+      x-rate-limit-reset: ['1528362065']
+      x-response-time: ['45']
+      x-transaction: [009a9ada00042898]
+      x-twitter-response-tags: [BouncerExempt, BouncerCompliant]
+      x-xss-protection: ['1; mode=block; report=https://twitter.com/i/xss_report']
+    status: {code: 200, message: OK}
+version: 1
