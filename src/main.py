@@ -99,4 +99,7 @@ class UserService(object):
             raise OutdatedCrendentialsException
 
     def generate(self):
-        return self.api.user_timeline()
+        return [
+            entry.text
+            for entry in self.api.user_timeline()
+        ]
