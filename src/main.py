@@ -4,6 +4,7 @@ import os
 from dotenv import load_dotenv, find_dotenv
 from copy import copy
 from pymongo import MongoClient
+from .text_parsing import parse_text
 
 
 load_dotenv(find_dotenv())
@@ -100,6 +101,6 @@ class UserService(object):
 
     def generate(self):
         return [
-            entry.text
+            parse_text(entry.text)
             for entry in self.api.user_timeline()
         ]
