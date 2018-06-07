@@ -1,0 +1,10 @@
+# application
+flask
+
+# tests
+pytest
+pytest-watch
+requests
+
+# operations
+gunicorn
