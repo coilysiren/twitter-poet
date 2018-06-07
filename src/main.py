@@ -43,15 +43,18 @@ class TwitterService(object):
         )
 
     def get_user(self, oauth_token):
-        user_data = self.db.get_user(
-            oauth_token=oauth_token,
-        )
-        auth = self.create_auth()
-        auth.set_access_token(
-            user_data['access_token'],
-            user_data['access_token_secret'],
-        )
-        return UserService(auth)
+        try:
+            user_data = self.db.get_user(
+                oauth_token=oauth_token,
+            )
+            auth = self.create_auth()
+            auth.set_access_token(
+                user_data['access_token'],
+                user_data['access_token_secret'],
+            )
+            return UserService(auth)
+        except TypeError:
+            return None
 
 
 class DatabaseSevice(object):

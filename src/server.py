@@ -17,11 +17,13 @@ def index():
 
 @app.route("/start")
 def start():
-    if session.get('request_token'):
-        return redirect(url_for('results'))
-    else:
+    if not session.get('request_token'):
         redirect_url = twitter.auth.get_authorization_url()
         session['request_token'] = twitter.auth.request_token
+
+    if twitter.get_user(session['request_token']['oauth_token']):
+        return redirect(url_for('results'))
+    else:
         return redirect(redirect_url)
 
 
