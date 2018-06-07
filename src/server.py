@@ -19,9 +19,6 @@ def start():
     if not session.get('request_token'):
         redirect_url, session['request_token'] = Twitter().redirect_and_token
 
-    print('session ' + str(session))
-    print('oauth_token ' + session['request_token']['oauth_token'])
-
     if Twitter().get_user(session['request_token']['oauth_token']):
         return redirect(url_for('results'))
     else:
