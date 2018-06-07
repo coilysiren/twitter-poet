@@ -1,6 +1,9 @@
 from flask import Flask
+from .main import TwitterHandler
+
 
 app = Flask(__name__)
+twitter = TwitterHandler()
 
 
 @app.route('/')

@@ -1,5 +1,7 @@
 # application
 flask
+tweepy
+python-dotenv
 
 # tests
 pytest
