@@ -11,8 +11,11 @@ load_dotenv(find_dotenv())
 class TwitterService(object):
 
     def __init__(self):
-        self.db = DatabaseSevice()
         self.auth = self.create_auth()
+
+    @property
+    def db(self):
+        return DatabaseSevice()
 
     def create_auth(self):
         return tweepy.OAuthHandler(
