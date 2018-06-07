@@ -6,23 +6,27 @@ from copy import copy
 
 class TwitterService(object):
 
-    def __init__(self, oauth_callback_path):
+    def __init__(self):
         load_dotenv(find_dotenv())
         self.auth = tweepy.OAuthHandler(
             os.environ['CONSUMER_KEY'],
             os.environ['CONSUMER_SECRET'],
-            oauth_callback_path
+            os.environ.get('CALLBACK_URL', 'http://localhost:5000/callback'),
         )
         self.users = {}  # TODO: mongodb
 
     def create_user(self, verifier, token):
+        print(token)
         user_twitter_auth = copy(self.auth)
-        user_twitter_auth.set_request_token(token[0], token[1])
+        self.auth.set_access_token = (
+            token['oauth_token'],
+            token['oauth_token_secret'],
+        )
         user_twitter_auth.get_access_token(verifier)
-        self.users[token] = UserService(user_twitter_auth)
+        self.users[token['oauth_token']] = UserService(user_twitter_auth)
 
     def get_user(self, token):
-        return self.users[token]
+        return self.users[token['oauth_token']]
 
 
 class UserService(object):
@@ -32,4 +36,4 @@ class UserService(object):
 
 
 def test_init():
-    assert TwitterService('').auth
+    assert TwitterService().auth
