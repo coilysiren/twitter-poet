@@ -3,17 +3,13 @@ import re
 
 def parse_text(text):
     for transform in [
-        remove_RTs,
         remove_links,
         remove_mentions,
         remove_special_characters,
+        remove_gt,
     ]:
         text = transform(text)
     return text
-
-
-def remove_RTs(string):
-    return re.sub(r'\bRT\b', '', string, flags=re.IGNORECASE)
 
 
 def remove_mentions(string):
@@ -25,4 +21,8 @@ def remove_links(string):
 
 
 def remove_special_characters(string):
-    return re.sub(r'[:\?\=\&\(\)\!\;\^]', '', string)
+    return re.sub(r'[^\w\s]', '', string)
+
+
+def remove_gt(string):
+    return re.sub(r'\s*gt\s+', '', string)

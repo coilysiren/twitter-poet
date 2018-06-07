@@ -102,5 +102,10 @@ class UserService(object):
     def generate(self):
         return [
             parse_text(entry.text)
-            for entry in self.api.user_timeline()
+            for entry in self.api.user_timeline(
+                count=200,
+                trim_user=True,
+                exclude_replies=True,
+                include_rts=False,
+            )
         ]
